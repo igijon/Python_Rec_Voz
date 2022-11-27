@@ -56,7 +56,7 @@ def print_voices():
     for voz in engine.getProperty('voices'):
         print(voz.id, voz)
 
-def get_day():
+def say_day():
     day = datetime.date.today()
     weekday = {
         0: 'Lunes',
@@ -67,4 +67,8 @@ def get_day():
         5: 'Sábado',
         6: 'Domingo'
     }
-    return weekday[day.weekday()]
+    talk(weekday[day.weekday()])
+
+def say_hour():
+    hour = datetime.datetime.now()
+    talk(f'En este momento son las {hour.hour} horas y {hour.minute} minutos')
