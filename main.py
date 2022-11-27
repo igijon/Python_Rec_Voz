@@ -1,3 +1,3 @@
-
+from asistente_virtual import *
 if __name__ == '__main__':
-    print('Hello')
+    audio_to_text()
