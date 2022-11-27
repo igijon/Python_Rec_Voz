@@ -45,9 +45,14 @@ def audio_to_text():
 def talk(msg):
     # Encender el motor pyttsx3
     engine = pyttsx3.init()
-
+    # engine.setProperty('voice', 'com.apple.speech.synthesis.voice.jorge')
     # Pronunciar mensaje
     engine.say(msg)
     engine.runAndWait()
 
+
+def print_voices():
+    engine = pyttsx3.init()
+    for voz in engine.getProperty('voices'):
+        print(voz.id, voz)
 

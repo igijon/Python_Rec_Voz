@@ -1,3 +1,3 @@
 from asistente_virtual import *
 if __name__ == '__main__':
-    talk('Este es mi mensaje')
+    talk('Te echo de menos')
