@@ -41,3 +41,13 @@ def audio_to_text():
             print('Ups, algo ha salido mal')
             return 'Esperando'
 
+
+def talk(msg):
+    # Encender el motor pyttsx3
+    engine = pyttsx3.init()
+
+    # Pronunciar mensaje
+    engine.say(msg)
+    engine.runAndWait()
+
+
