@@ -84,6 +84,22 @@ def saludo():
     else:
         momento = 'Buenas tardes.'
 
-    talk(f'{momento} Soy Mónica, tu asistente personal. Por favor, dime en qué puedo ayudarte.')
+    talk(f'{momento} Soy Pepa la Cerda, tu asistente personal. Por favor, dime en qué puedo ayudarte.')
 
+def requests():
+    saludo()
 
+    stop = False
+    while not stop:
+        #Activar el micro y guardar la request en un string
+        request = audio_to_text().lower()
+        if 'abrir youtube' in request:
+            talk('Abriendo youtube')
+            webbrowser.open('https://www.youtube.com')
+        elif 'abrir navegador' in request:
+            talk('Abriendo navegador.')
+            webbrowser.open('https://www.google.com')
+        elif 'qué día es hoy' in request:
+            say_day()
+        elif 'qué hora es' in request:
+            say_hour()
