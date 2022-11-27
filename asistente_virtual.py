@@ -72,3 +72,18 @@ def say_day():
 def say_hour():
     hour = datetime.datetime.now()
     talk(f'En este momento son las {hour.hour} horas y {hour.minute} minutos')
+
+
+def saludo():
+
+    hour = datetime.datetime.now()
+    if hour.hour < 6 or hour.hour > 20:
+        momento = 'Buenas noches.'
+    elif 6 <= hour.hour < 13:
+        momento = 'Buenos días.'
+    else:
+        momento = 'Buenas tardes.'
+
+    talk(f'{momento} Soy Mónica, tu asistente personal. Por favor, dime en qué puedo ayudarte.')
+
+
