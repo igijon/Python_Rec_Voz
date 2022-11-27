@@ -56,3 +56,15 @@ def print_voices():
     for voz in engine.getProperty('voices'):
         print(voz.id, voz)
 
+def get_day():
+    day = datetime.date.today()
+    weekday = {
+        0: 'Lunes',
+        1: 'Martes',
+        2: 'Miércoles',
+        3: 'Jueves',
+        4: 'Viernes',
+        5: 'Sábado',
+        6: 'Domingo'
+    }
+    return weekday[day.weekday()]
