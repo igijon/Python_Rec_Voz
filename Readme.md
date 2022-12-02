@@ -1,7 +1,7 @@
 Bibliotecas
 * pyaudio (portaudio)
-* pyttxs3
-* SpechRecognition
+* pyttsx3
+* SpeechRecognition
 * pywhatkit
 * yfinance
 * pyjokes
