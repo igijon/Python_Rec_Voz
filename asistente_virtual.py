@@ -22,8 +22,7 @@ def audio_to_text():
         print('Puedes comenzar a hablar')
 
         # Guardar audio
-        audio = r.listen(origen)
-
+        audio = r.listen(origen, )
         try:
             # Buscar en google lo escuchado
             text = r.recognize_google(audio, language='es-es')
@@ -43,9 +42,13 @@ def audio_to_text():
 
 
 def talk(msg):
+    newVoiceRate = 160
+
     # Encender el motor pyttsx3
     engine = pyttsx3.init()
-    # engine.setProperty('voice', 'com.apple.speech.synthesis.voice.jorge')
+
+    engine.setProperty('rate', newVoiceRate)
+    #engine.setProperty('voice', 'com.apple.eloquence.es-ES.Eddy')
     # Pronunciar mensaje
     engine.say(msg)
     engine.runAndWait()
@@ -84,15 +87,17 @@ def saludo():
     else:
         momento = 'Buenas tardes.'
 
-    talk(f'{momento} Soy Elvira, tu asistente personal. Por favor, dime en qué puedo ayudarte.')
+    talk(f'{momento} Soy Lucía, tu asistente personal. Por favor, dime en qué puedo ayudarte.')
 
 def requests():
     saludo()
 
+    print_voices()
     stop = False
     while not stop:
         #Activar el micro y guardar la request en un string
         request = audio_to_text().lower()
+        print(request)
         if 'abrir youtube' in request:
             talk('Abriendo youtube')
             webbrowser.open('https://www.youtube.com')
